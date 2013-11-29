@@ -99,6 +99,14 @@ $model->foo = 'bar';
 $model->save();
 ```
 
+##Predis
+
+You can access Predis command directly from the Model
+
+```php
+// @todo add example
+```
+
 ##Laravel 4
 
 For laravel 4, you need to add the service provider. Open app/config/app.php, and add a new item to the providers array.
