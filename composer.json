@@ -1,0 +1,26 @@
+{
+	"name": "ellipsesynergie/redis-orm",
+	"description": "Easy and simple Redis ORM for php",
+	"keywords": ["redis-orm"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Maxime Beaudoin",
+			"email": "maxime.beaudoin@ellipse-synergie.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"predis/predis": "0.8.*"
+	},
+	"require-dev": {
+		"mockery/mockery": "0.7.2",
+		"phpunit/phpunit": "3.7.*"
+	},
+	"autoload": {
+		"psr-0": {
+			"EllipseSynergie\\RedisOrm": "src/"
+		}
+	},
+	"minimum-stability": "dev"
+}
