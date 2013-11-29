@@ -28,19 +28,19 @@ $connections = array(
 );
 
 // Create the connections resolver
-$resolver = new \IsaSdk\Repository\Predis\ConnectionResolver($connections);
+$resolver = new \EllipseSynergie\RedisOrm\Model\ConnectionResolver($connections);
 
 // Set the default connection name
 $resolver->setDefaultConnection('default');
 		
 // Now you MUST set the resolver to the model
-\IsaSdk\Repository\Predis::setConnectionResolver($resolver);
+\EllipseSynergie\RedisOrm\Model::setConnectionResolver($resolver);
 ```
 
 After this step, every model should be able to connect to redis. Also, you can change the connection name directly in your model after you have define it in the connections resolver.
 
 ```php
-class ExamplePlot extends IsaSdk\Repository\Predis 
+class ExamplePlot extends EllipseSynergie\RedisOrm\Model 
 {
 	protected $connection = 'my-redis-connection-name';
 }
@@ -50,7 +50,7 @@ class ExamplePlot extends IsaSdk\Repository\Predis
 Using the ORM with SET/GET
 
 ```php
-class ExampleModel extends IsaSdk\Repository\Predis 
+class ExampleModel extends EllipseSynergie\RedisOrm\Model 
 {
 
 	/**
@@ -69,7 +69,7 @@ $model->save();
 Using the ORM with HSET/HGET (Hashes)
 
 ```php
-class ExampleModel extends IsaSdk\Repository\Predis 
+class ExampleModel extends EllipseSynergie\RedisOrm\Model 
 {
 	/**
 	 * Use Redis Hashing for this repository
