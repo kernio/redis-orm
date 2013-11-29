@@ -46,6 +46,59 @@ class ExamplePlot extends IsaSdk\Repository\Predis
 }
 ```
 
+### Example
+Using the ORM with SET/GET
+
+```php
+class ExampleModel extends IsaSdk\Repository\Predis 
+{
+
+	/**
+	 * Namespace used to generates keys
+	 *
+	 * @var string
+	 */
+	protected static $namespace = 'my-namespace';
+}
+
+//Will throw the redis command : SET "my-namespace:1" "{'foo':'bar'}"
+$model = new ExampleModel;
+$model->foo = 'bar';
+$model->save();
+```
+Using the ORM with HSET/HGET (Hashes)
+
+```php
+class ExampleModel extends IsaSdk\Repository\Predis 
+{
+	/**
+	 * Use Redis Hashing for this repository
+	 *
+	 * @var bool
+	 */
+	protected static $hash = true;
+	
+	/**
+	 * Namespace for hash butckets
+	 *
+	 * @var string
+	 */
+	protected static $bucketNamespace = 'my-bucket';
+
+	/**
+	 * Namespace used to generates keys
+	 *
+	 * @var string
+	 */
+	protected static $namespace = 'my-namespace';
+}
+
+//Will throw the redis command : HSET "my-bucket:1" "my-namespace:1" "{'foo':'bar'}"
+$model = new ExampleModel;
+$model->foo = 'bar';
+$model->save();
+```
+
 ##Laravel 4
 
 For laravel 4, you need to add the service provider. Open app/config/app.php, and add a new item to the providers array.
