@@ -45,3 +45,21 @@ class ExamplePlot extends IsaSdk\Repository\Predis
 	protected $connection = 'my-redis-connection-name';
 }
 ```
+
+##Laravel 4
+
+For laravel 4, you need to add the service provider. Open app/config/app.php, and add a new item to the providers array.
+
+```php
+'EllipseSynergie\RedisOrm\ServiceProvider'
+```
+
+###Package configurations
+
+To configure the package to meet your needs, you must publish the configuration in your application before you can modify them. Run this artisan command.
+
+```bash
+php artisan config:publish ellipsesynergie/redis-orm
+```
+
+The configuration files could now be found in `app/config/packages/ellipsesynergie/redis-orm`. Read the description for each configurations to know what you can override.
