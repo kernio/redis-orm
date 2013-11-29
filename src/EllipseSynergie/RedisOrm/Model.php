@@ -28,13 +28,6 @@ abstract class Model
 	protected static $namespace;
 
 	/**
-	 * The object id
-	 *
-	 * @var int
-	 */
-	protected $id;
-
-	/**
 	 * The model's attributes.
 	 *
 	 * @var array
