@@ -28,7 +28,7 @@ $connections = array(
 );
 
 // Create the connections resolver
-$resolver = new \EllipseSynergie\RedisOrm\Model\ConnectionResolver($connections);
+$resolver = new \EllipseSynergie\RedisOrm\ConnectionResolver($connections);
 
 // Set the default connection name
 $resolver->setDefaultConnection('default');
