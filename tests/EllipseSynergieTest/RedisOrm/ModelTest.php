@@ -330,4 +330,9 @@ class ModelTest extends \PHPUnit_Framework_TestCase
 		$this->model->test = 'foo';
 		$this->assertEquals('bravo !', $this->model->test);
 	}
+
+	public function testAccesor()
+	{
+		$this->assertEquals('foo', $this->model->accessor);
+	}
 }

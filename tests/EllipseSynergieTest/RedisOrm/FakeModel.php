@@ -15,4 +15,9 @@ class FakeModel extends Model
 	{
 		$this->attributes['test'] = 'bravo !';
 	}
+
+	public function getAccessorAttribute($value)
+	{
+		return 'foo';
+	}
 }

@@ -21,7 +21,7 @@
 	    <directory suffix=".php">./src</directory>
 	    <exclude>
 	    	<file>./src/EllipseSynergie/RedisOrm/ServiceProvider.php</file>
-	    <directory suffix=".php">config</directory>
+	    	<directory suffix=".php">./src/config</directory>
 	    </exclude>
 	  </whitelist>
 	</filter>
