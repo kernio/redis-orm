@@ -112,7 +112,7 @@ You can access Predis command directly from the Model
 For laravel 4, you need to add the service provider. Open app/config/app.php, and add a new item to the providers array.
 
 ```php
-'EllipseSynergie\RedisOrm\ServiceProvider'
+'EllipseSynergie\RedisOrm\RedisOrmServiceProvider'
 ```
 
 ###Package configurations

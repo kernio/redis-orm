@@ -15,7 +15,7 @@ use EllipseSynergie\RedisOrm\ConnectionResolver;
 use EllipseSynergie\RedisOrm\Model as Model;
 use Predis\Client;
 
-class ServiceProvider extends ServiceProvider
+class RedisOrmServiceProvider extends ServiceProvider
 {
 
 	/**
