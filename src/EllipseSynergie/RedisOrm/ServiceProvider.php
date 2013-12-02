@@ -2,9 +2,13 @@
 namespace EllipseSynergie\RedisOrm;
 
 /**
- * Service provider
+ * This file is part of the Redis ORM package.
  *
- * @author Ellipse Synergie <info@ellipse-synergie.com>
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Maxime Beaudoin <maxime.beaudoin@ellipse-synergie.com>
+ *        
  */
 use Illuminate\Support\ServiceProvider;
 use EllipseSynergie\RedisOrm\ConnectionResolver;

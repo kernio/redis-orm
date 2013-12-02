@@ -2,9 +2,13 @@
 namespace EllipseSynergie\RedisOrm;
 
 /**
- * Repository - Base model for Predis repositories
+ * This file is part of the Redis ORM package.
  *
- * @author Ellipse Synergie <info@ellipse-synergie.com>
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Maxime Beaudoin <maxime.beaudoin@ellipse-synergie.com>
+ *        
  */
 use Predis\Client;
 use EllipseSynergie\RedisOrm\Exceptions\ModelNotFoundException;
@@ -465,17 +469,20 @@ abstract class Model
 	 * Validate the current object
 	 */
 	abstract public function validate();
-	
+
 	/**
 	 * Convert a value to studly caps case.
 	 *
-	 * @param  string  $value
+	 * @param string $value        	
 	 * @return string
 	 */
 	public static function studlyCase($value)
 	{
-		$value = ucwords(str_replace(array('-', '_'), ' ', $value));
-
+		$value = ucwords(str_replace(array(
+			'-',
+			'_'
+		), ' ', $value));
+		
 		return str_replace(' ', '', $value);
 	}
 
