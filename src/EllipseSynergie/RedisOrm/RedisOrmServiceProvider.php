@@ -14,6 +14,7 @@ use Illuminate\Support\ServiceProvider;
 use EllipseSynergie\RedisOrm\ConnectionResolver;
 use EllipseSynergie\RedisOrm\Model as Model;
 use Predis\Client;
+use Config;
 
 class RedisOrmServiceProvider extends ServiceProvider
 {
@@ -25,7 +26,7 @@ class RedisOrmServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		$this->package('ellipsesynergie/redis-orm', 'ellipsesynergie/redis-orm');
+		//
 	}
 
 	/**
@@ -36,7 +37,7 @@ class RedisOrmServiceProvider extends ServiceProvider
 	public function register()
 	{
 		// Load package config
-		$this->app['config']->package('ellipsesynergie/redis-orm', __DIR__ . '/../config');
+		$this->package('ellipsesynergie/redis-orm', 'ellipsesynergie/redis-orm');
 		
 		$this->registerPredisConnectionResolver();
 	}
@@ -50,7 +51,7 @@ class RedisOrmServiceProvider extends ServiceProvider
 		$connections = array();
 		
 		// Generate connection
-		foreach (\Config::get('redis-orm::redis') as $name => $configruations) {
+		foreach (Config::get('ellipsesynergie/redis-orm::redis') as $name => $configruations) {
 			$connections[$name] = new Client($configruations);
 		}
 		
